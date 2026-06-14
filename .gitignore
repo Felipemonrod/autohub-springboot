@@ -1,0 +1,61 @@
+# Compilados e build
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Banco de dados SQLite (arquivo local, não vai para o repositório)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+spring.log
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# IDE — IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# IDE — Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IDE — VS Code
+.vscode/
+
+# Claude Code
+.claude/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente locais
+.env
+.env.local
+*.env
+
+# Configurações locais que não devem ser versionadas
+application-local.properties
+application-local.yml
+
+.claude

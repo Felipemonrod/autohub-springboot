@@ -1,0 +1,11 @@
+# Normaliza finais de linha para LF no repositório
+* text=auto eol=lf
+
+# Arquivos binários — sem conversão
+*.jar binary
+*.class binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.db binary
+*.sqlite binary

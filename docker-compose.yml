@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  autohub-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: autohub-backend
+    ports:
+      - "8080:8080"
+    environment:
+      # URL do banco SQLite persistido no volume Docker
+      - DATASOURCE_URL=jdbc:sqlite:/data/autohub.db
+      # Perfil Spring ativo
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      # Volume nomeado para persistir o banco SQLite
+      - sqlite-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  # Volume Docker nomeado para o arquivo SQLite
+  sqlite-data:
+    driver: local
